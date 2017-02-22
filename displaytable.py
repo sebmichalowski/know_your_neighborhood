@@ -1,0 +1,3 @@
+class DisplayTable(table):
+    pass
+
