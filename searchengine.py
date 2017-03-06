@@ -149,9 +149,9 @@ class SearchEngine:
     @staticmethod
     def largest_number_of_communities(how_many=1):
         """
-
+        Counts communities in district and returns list.
         :param how_many:
-        :return:
+        :return: list of largest districts (by commune count)
         """
         districts_dict = {}
 
@@ -173,6 +173,10 @@ class SearchEngine:
 
     @staticmethod
     def more_than_one_category_locations():
+        """
+        Returns list of locations, that belong to more than one category.
+        :return: list
+        """
         locations_list = []
         for commune_object in Commune.commune_list:
             look_for = str(commune_object.commune_name)
@@ -204,6 +208,11 @@ class SearchEngine:
 
     @staticmethod
     def advanced_search_by_name(user_input):
+        """
+        List of searched items
+        :param user_input:
+        :return: list
+        """
         search_lst = []
         for commune in Commune.commune_list:
             if commune.commune_name.lower().find(user_input.lower()) is not -1:
@@ -222,6 +231,11 @@ class SearchEngine:
 
     @staticmethod
     def advanced_search_by_type(user_input):
+        """
+        List of searched items
+        :param user_input:
+        :return: list
+        """
         search_lst = []
         for commune in Commune.commune_list:
             if commune.commune_type_name.lower().find(user_input.lower()) is not -1:
@@ -240,6 +254,11 @@ class SearchEngine:
 
     @staticmethod
     def advanced_search_by_district(user_input):
+        """
+        List of searched items
+        :param user_input:
+        :return: list
+        """
         search_lst = []
         for commune in Commune.commune_list:
             if commune.district_name.lower().find(user_input.lower()) is not -1:
